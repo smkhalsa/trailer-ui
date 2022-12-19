@@ -6,6 +6,7 @@ import 'package:trailer_ui/widgets/temperature.dart';
 import 'package:trailer_ui/widgets/energy.dart';
 import 'package:trailer_ui/widgets/bed.dart';
 import 'package:trailer_ui/widgets/water.dart';
+import 'package:trailer_ui/widgets/settings.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -32,6 +33,7 @@ class HomeScreen extends StatelessWidget {
                 Awning(),
                 Deck(),
                 Leveling(),
+                Settings(),
               ],
             ),
           )

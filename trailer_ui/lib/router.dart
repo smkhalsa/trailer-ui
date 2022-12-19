@@ -4,6 +4,7 @@ import 'package:trailer_ui/screens/home_screen.dart';
 import 'package:trailer_ui/screens/climate_screen.dart';
 import 'package:trailer_ui/screens/energy_screen.dart';
 import 'package:trailer_ui/screens/water_screen.dart';
+import 'package:trailer_ui/screens/settings_screen.dart';
 
 final router = GoRouter(routes: [
   GoRoute(path: '/', builder: (context, state) => const HomeScreen(), routes: [
@@ -18,6 +19,10 @@ final router = GoRouter(routes: [
     GoRoute(
       path: "water",
       builder: (context, state) => const WaterScreen(),
+    ),
+    GoRoute(
+      path: "settings",
+      builder: (context, state) => const SettingsScreen(),
     ),
   ]),
 ]);
