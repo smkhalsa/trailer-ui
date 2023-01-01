@@ -4,9 +4,10 @@ import 'package:trailer_ui/setup.dart';
 import 'package:trailer_ui/router.dart';
 import 'package:trailer_ui/theme.dart';
 
-void main() {
+Future<void> main() async {
   /// TODO: replace with production services
-  setupMockServices();
+  await setupMockServices();
+  await setupServices();
   runApp(const MainApp());
 }
 

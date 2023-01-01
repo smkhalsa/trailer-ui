@@ -22,7 +22,7 @@ final router = GoRouter(routes: [
     ),
     GoRoute(
       path: "settings",
-      builder: (context, state) => const SettingsScreen(),
+      builder: (context, state) => SettingsScreen(),
     ),
   ]),
 ]);

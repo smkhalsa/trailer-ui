@@ -5,6 +5,7 @@ import 'package:trailer_ui/service_interfaces/climate_service.dart';
 import 'package:trailer_ui/service_interfaces/energy_service.dart';
 import 'package:trailer_ui/service_interfaces/water_service.dart';
 import 'package:trailer_ui/service_interfaces/linear_mechanism_service.dart';
+import 'package:trailer_ui/service_interfaces/network_service.dart';
 
 /// Mock imports
 import 'package:trailer_ui/service_mocks/mock_climate_service.dart';
@@ -12,7 +13,10 @@ import 'package:trailer_ui/service_mocks/mock_energy_service.dart';
 import 'package:trailer_ui/service_mocks/mock_water_service.dart';
 import 'package:trailer_ui/service_mocks/mock_mechanism_service.dart';
 
-void setupMockServices() {
+/// Implementation imports
+import 'package:trailer_ui/service_implementations/nm_network_service.dart';
+
+Future<void> setupMockServices() async {
   GetIt.I.registerSingleton<ClimateService>(MockClimateService());
   GetIt.I.registerSingleton<EnergyService>(MockEnergyService());
   GetIt.I.registerSingleton<WaterService>(MockWaterService());
@@ -32,4 +36,10 @@ void setupMockServices() {
     MockLinearMechanismService(),
     instanceName: "leveling",
   );
+}
+
+Future<void> setupServices() async {
+  final networkService = NMNetworkService();
+  await networkService.init();
+  GetIt.I.registerSingleton<NetworkService>(networkService);
 }
